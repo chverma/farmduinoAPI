@@ -1,0 +1,12 @@
+version: '2'
+services:
+    api:
+        image: node:carbon
+        container_name: api_container
+        restart: always
+        working_dir: /www
+        volumes:
+            - ./farmAPI:/www
+        command: bash -c "npm install; npm start"
+        ports:
+            - 80:8080
